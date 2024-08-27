@@ -1,5 +1,5 @@
 ﻿// ReSharper disable once IdentifierTypo
-namespace windowsformsapp1.types
+namespace WinFormsApp.types
 {
     public class Weapon
     {
