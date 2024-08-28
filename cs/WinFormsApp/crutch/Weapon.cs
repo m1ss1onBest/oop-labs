@@ -1,6 +1,4 @@
-﻿using WinFormsApp.types;
-
-namespace WinFormsApp.crutch
+﻿namespace WinFormsApp.crutch
 {
     public class Weapon
     {
