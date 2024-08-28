@@ -5,17 +5,27 @@ namespace WinFormsApp.types
 {
     public class WeaponType
     {
-        private string Name { set; get; } = "no-name-specified";
-        private string Caliber { set; get; } = "no-caliber-specified";
-        private int MagCapacity { set; get; } = 8;
-        private int Damage { set; get; } = 1;
-        private int BarrelLength { set; get; } = 161;
-        
+        private string Name { set; get; }
+        private BulletType Caliber { set; get; }
+        private int Barrel { set; get; }
+        private float Accuracy { set; get; }
 
-        public WeaponType()
+        public WeaponType(string name)
         {
-            
+            Name = name;
         }
 
+        public WeaponType(
+            string name,
+            BulletType caliber,
+            int barrel,
+            float accuracy
+        )
+        {
+            Name = name;
+            Caliber = caliber;
+            Barrel = barrel;
+            Accuracy = accuracy;
+        }
     }
 }
