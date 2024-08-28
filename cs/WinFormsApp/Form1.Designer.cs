@@ -37,13 +37,14 @@
       this.optionsButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
       // menuStrip2
       // 
-      this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.actionsButtonToolStripMenuItem, this.optionsButtonToolStripMenuItem });
+      this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.actionsButtonToolStripMenuItem, this.optionsButtonToolStripMenuItem, this.aToolStripMenuItem });
       this.menuStrip2.Location = new System.Drawing.Point(0, 0);
       this.menuStrip2.Name = "menuStrip2";
       this.menuStrip2.Size = new System.Drawing.Size(904, 28);
@@ -108,6 +109,12 @@
       this.dataGridView1.Size = new System.Drawing.Size(904, 455);
       this.dataGridView1.TabIndex = 2;
       // 
+      // aToolStripMenuItem
+      // 
+      this.aToolStripMenuItem.Name = "aToolStripMenuItem";
+      this.aToolStripMenuItem.Size = new System.Drawing.Size(31, 24);
+      this.aToolStripMenuItem.Text = "A";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -126,6 +133,8 @@
       this.PerformLayout();
     }
 
+    private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+
     private System.Windows.Forms.ToolStripMenuItem saveFileButtonToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem loadFileButtonToolStripMenuItem;
 
@@ -135,7 +144,7 @@
 
     private System.Windows.Forms.DataGridView dataGridView1;
 
-    private System.Windows.Forms.MenuStrip menuStrip2;
+    public System.Windows.Forms.MenuStrip menuStrip2;
     private System.Windows.Forms.ToolStripMenuItem optionsButtonToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem exitButtonToolStripMenuItem;
 

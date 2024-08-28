@@ -52,6 +52,8 @@ namespace WinFormsApp
     }
     private void newWithArgsButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
+      InputWeaponForm form = new InputWeaponForm(this);
+      form.ShowDialog();
       
     }
     private void saveFileButtonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,7 +91,7 @@ namespace WinFormsApp
     //endregion form
     
     //region logic
-    private void AddToDataGrid(Weapon w)
+    public void AddToDataGrid(Weapon w)
     {
       dataGridView1.Rows.Add(w.Name, w.Caliber, w.MagazineCapacity, w.BarrelLength);
     }
