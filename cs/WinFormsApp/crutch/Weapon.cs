@@ -2,10 +2,10 @@
 {
     public class Weapon
     {
-        private string Name { set; get; }
-        private string Caliber { set; get; } = "0x0mm";
-        private int MagazineCapacity { set; get; } = 0;
-        private int BarrelLength { set; get; } = 0;
+        public string Name { set; get; }
+        public string Caliber { set; get; } = "0x0mm";
+        public int MagazineCapacity { set; get; } = 0;
+        public float BarrelLength { set; get; } = 0;
 
         public Weapon()
         {
@@ -21,7 +21,7 @@
             string name,
             string caliber,
             int magazineCapacity,
-            int barrelLength
+            float barrelLength
         )
         {
             Name = name;

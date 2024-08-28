@@ -28,89 +28,116 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-      this.typesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.weaponsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.bulletsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.magazinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.exiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.menuStrip1.SuspendLayout();
+      this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+      this.actionsButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.newButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.newWithArgsButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.saveFileButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.loadFileButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.optionsButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.exitButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.menuStrip2.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
-      // menuStrip1
+      // menuStrip2
       // 
-      this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.typesToolStripMenuItem, this.exiToolStripMenuItem });
-      this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-      this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(904, 28);
-      this.menuStrip1.TabIndex = 0;
-      this.menuStrip1.Text = "menuStrip1";
+      this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.actionsButtonToolStripMenuItem, this.optionsButtonToolStripMenuItem });
+      this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+      this.menuStrip2.Name = "menuStrip2";
+      this.menuStrip2.Size = new System.Drawing.Size(904, 28);
+      this.menuStrip2.TabIndex = 1;
+      this.menuStrip2.Text = "menuStrip2";
       // 
-      // typesToolStripMenuItem
+      // actionsButtonToolStripMenuItem
       // 
-      this.typesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.weaponsToolStripMenuItem, this.bulletsToolStripMenuItem, this.magazinesToolStripMenuItem });
-      this.typesToolStripMenuItem.Name = "typesToolStripMenuItem";
-      this.typesToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-      this.typesToolStripMenuItem.Text = "Types";
+      this.actionsButtonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.newButtonToolStripMenuItem, this.newWithArgsButtonToolStripMenuItem, this.saveFileButtonToolStripMenuItem, this.loadFileButtonToolStripMenuItem });
+      this.actionsButtonToolStripMenuItem.Name = "actionsButtonToolStripMenuItem";
+      this.actionsButtonToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+      this.actionsButtonToolStripMenuItem.Text = "actionsButton";
       // 
-      // weaponsToolStripMenuItem
+      // newButtonToolStripMenuItem
       // 
-      this.weaponsToolStripMenuItem.Name = "weaponsToolStripMenuItem";
-      this.weaponsToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-      this.weaponsToolStripMenuItem.Text = "Weapons";
-      this.weaponsToolStripMenuItem.Click += new System.EventHandler(this.weaponsToolStripMenuItem_Click);
+      this.newButtonToolStripMenuItem.Name = "newButtonToolStripMenuItem";
+      this.newButtonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+      this.newButtonToolStripMenuItem.Text = "newButton";
       // 
-      // bulletsToolStripMenuItem
+      // newWithArgsButtonToolStripMenuItem
       // 
-      this.bulletsToolStripMenuItem.Name = "bulletsToolStripMenuItem";
-      this.bulletsToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-      this.bulletsToolStripMenuItem.Text = "Bullets";
+      this.newWithArgsButtonToolStripMenuItem.Name = "newWithArgsButtonToolStripMenuItem";
+      this.newWithArgsButtonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+      this.newWithArgsButtonToolStripMenuItem.Text = "newWithArgsButton";
+      this.newWithArgsButtonToolStripMenuItem.Click += new System.EventHandler(this.newWithArgsButtonToolStripMenuItem_Click);
       // 
-      // magazinesToolStripMenuItem
+      // saveFileButtonToolStripMenuItem
       // 
-      this.magazinesToolStripMenuItem.Name = "magazinesToolStripMenuItem";
-      this.magazinesToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-      this.magazinesToolStripMenuItem.Text = "Magazines";
+      this.saveFileButtonToolStripMenuItem.Name = "saveFileButtonToolStripMenuItem";
+      this.saveFileButtonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+      this.saveFileButtonToolStripMenuItem.Text = "saveFileButton";
+      this.saveFileButtonToolStripMenuItem.Click += new System.EventHandler(this.saveFileButtonToolStripMenuItem_Click);
       // 
-      // exiToolStripMenuItem
+      // loadFileButtonToolStripMenuItem
       // 
-      this.exiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.exitToolStripMenuItem });
-      this.exiToolStripMenuItem.Name = "exiToolStripMenuItem";
-      this.exiToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-      this.exiToolStripMenuItem.Text = "Options";
+      this.loadFileButtonToolStripMenuItem.Name = "loadFileButtonToolStripMenuItem";
+      this.loadFileButtonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+      this.loadFileButtonToolStripMenuItem.Text = "loadFileButton";
+      this.loadFileButtonToolStripMenuItem.Click += new System.EventHandler(this.loadFileButtonToolStripMenuItem_Click);
       // 
-      // exitToolStripMenuItem
+      // optionsButtonToolStripMenuItem
       // 
-      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-      this.exitToolStripMenuItem.Text = "Exit";
-      this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+      this.optionsButtonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.exitButtonToolStripMenuItem });
+      this.optionsButtonToolStripMenuItem.Name = "optionsButtonToolStripMenuItem";
+      this.optionsButtonToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+      this.optionsButtonToolStripMenuItem.Text = "optionsButton";
+      // 
+      // exitButtonToolStripMenuItem
+      // 
+      this.exitButtonToolStripMenuItem.Name = "exitButtonToolStripMenuItem";
+      this.exitButtonToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+      this.exitButtonToolStripMenuItem.Text = "exitButton";
+      this.exitButtonToolStripMenuItem.Click += new System.EventHandler(this.exitButtonToolStripMenuItem_Click);
+      // 
+      // dataGridView1
+      // 
+      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+      this.dataGridView1.Name = "dataGridView1";
+      this.dataGridView1.RowTemplate.Height = 24;
+      this.dataGridView1.Size = new System.Drawing.Size(904, 455);
+      this.dataGridView1.TabIndex = 2;
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(904, 521);
-      this.Controls.Add(this.menuStrip1);
+      this.ClientSize = new System.Drawing.Size(904, 483);
+      this.Controls.Add(this.dataGridView1);
+      this.Controls.Add(this.menuStrip2);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.MainMenuStrip = this.menuStrip1;
       this.Name = "Form1";
       this.Text = "Form1";
       this.Load += new System.EventHandler(this.Form1_Load);
-      this.menuStrip1.ResumeLayout(false);
-      this.menuStrip1.PerformLayout();
+      this.menuStrip2.ResumeLayout(false);
+      this.menuStrip2.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
     }
 
-    private System.Windows.Forms.MenuStrip menuStrip1;
-    private System.Windows.Forms.ToolStripMenuItem typesToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem weaponsToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem bulletsToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem magazinesToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem exiToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem saveFileButtonToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem loadFileButtonToolStripMenuItem;
+
+    private System.Windows.Forms.ToolStripMenuItem actionsButtonToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem newButtonToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem newWithArgsButtonToolStripMenuItem;
+
+    private System.Windows.Forms.DataGridView dataGridView1;
+
+    private System.Windows.Forms.MenuStrip menuStrip2;
+    private System.Windows.Forms.ToolStripMenuItem optionsButtonToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem exitButtonToolStripMenuItem;
 
     #endregion
   }
