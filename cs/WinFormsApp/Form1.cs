@@ -44,11 +44,19 @@ namespace WinFormsApp
       dataGridView1.Columns.Add("Barrel", "Barrel Length");
 
       dataGridView1.Columns["Name"].Width = 175;
+      dataGridView1.Columns["Caliber"].Width = 200;
+      dataGridView1.Columns["Barrel"].Width = 200;
     }
 
     private void exitButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Application.Exit();
+    }
+    private void newButtonToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Weapon wp = new Weapon();
+      WeaponList.Add(wp);
+      AddToDataGrid(wp);
     }
     private void newWithArgsButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -74,6 +82,7 @@ namespace WinFormsApp
     private void loadFileButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
       WeaponList.Clear();
+      dataGridView1.Rows.Clear();
 
       if (File.Exists(@"data.dat"))
       {
@@ -83,6 +92,8 @@ namespace WinFormsApp
           while (reader.BaseStream.Position != reader.BaseStream.Length)
           {
             Weapon weapon = new Weapon(reader.ReadString(), reader.ReadString(), reader.ReadInt32(), reader.ReadSingle());
+            WeaponList.Add(weapon);
+            AddToDataGrid(weapon);
           }
         }
 
@@ -96,6 +107,5 @@ namespace WinFormsApp
       dataGridView1.Rows.Add(w.Name, w.Caliber, w.MagazineCapacity, w.BarrelLength);
     }
     //endregion logic
-
   }
 }

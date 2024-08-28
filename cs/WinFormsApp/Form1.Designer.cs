@@ -36,8 +36,8 @@
       this.loadFileButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.optionsButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.dataGridView1 = new System.Windows.Forms.DataGridView();
       this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.dataGridView1 = new System.Windows.Forms.DataGridView();
       this.menuStrip2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
@@ -63,6 +63,7 @@
       this.newButtonToolStripMenuItem.Name = "newButtonToolStripMenuItem";
       this.newButtonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
       this.newButtonToolStripMenuItem.Text = "newButton";
+      this.newButtonToolStripMenuItem.Click += new System.EventHandler(this.newButtonToolStripMenuItem_Click);
       // 
       // newWithArgsButtonToolStripMenuItem
       // 
@@ -99,6 +100,12 @@
       this.exitButtonToolStripMenuItem.Text = "exitButton";
       this.exitButtonToolStripMenuItem.Click += new System.EventHandler(this.exitButtonToolStripMenuItem_Click);
       // 
+      // aToolStripMenuItem
+      // 
+      this.aToolStripMenuItem.Name = "aToolStripMenuItem";
+      this.aToolStripMenuItem.Size = new System.Drawing.Size(31, 24);
+      this.aToolStripMenuItem.Text = "A";
+      // 
       // dataGridView1
       // 
       this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -108,12 +115,6 @@
       this.dataGridView1.RowTemplate.Height = 24;
       this.dataGridView1.Size = new System.Drawing.Size(904, 455);
       this.dataGridView1.TabIndex = 2;
-      // 
-      // aToolStripMenuItem
-      // 
-      this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-      this.aToolStripMenuItem.Size = new System.Drawing.Size(31, 24);
-      this.aToolStripMenuItem.Text = "A";
       // 
       // Form1
       // 
