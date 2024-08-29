@@ -1,28 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using WinFormsApp.crutch;
 
 namespace WinFormsApp
 {
   public partial class Form1 : Form
   {
-    public List<Weapon> WeaponList = new List<Weapon>();
+    private readonly List<Weapon> _weaponList = new List<Weapon>();
+    private TextBox[] _textBoxes;
     public Form1()
     {
       InitializeComponent();
     }
     
-    //region form
     private void Form1_Load(object sender, EventArgs e)
     {
       // form elements
@@ -43,9 +36,17 @@ namespace WinFormsApp
       dataGridView1.Columns.Add("Magazine", "Magazine Capacity");
       dataGridView1.Columns.Add("Barrel", "Barrel Length");
 
-      dataGridView1.Columns["Name"].Width = 175;
-      dataGridView1.Columns["Caliber"].Width = 200;
-      dataGridView1.Columns["Barrel"].Width = 200;
+      dataGridView1.Columns["Name"].Width = 150;
+      dataGridView1.Columns["Caliber"].Width = 100;
+      dataGridView1.Columns["Magazine"].Width = 100;
+      dataGridView1.Columns["Barrel"].Width = 100;
+      
+      // labels option
+      _textBoxes = new[] { textBoxName, textBoxCaliber, textBoxMag, textBoxBarrel };
+      labelName.Text = @"Name";
+      labelCaliber.Text = @"Caliber";
+      labelMagazine.Text = @"Magazine Capacity";
+      labelBarrel.Text = @"Barrel Length";
     }
 
     private void exitButtonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,21 +56,35 @@ namespace WinFormsApp
     private void newButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Weapon wp = new Weapon();
-      WeaponList.Add(wp);
+      _weaponList.Add(wp);
       AddToDataGrid(wp);
     }
+    
     private void newWithArgsButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      FormWeaponNew @new = new FormWeaponNew(this);
-      @new.ShowDialog();
+      if (float.TryParse(textBoxBarrel.Text, out float barrelLength) &&
+          int.TryParse(textBoxMag.Text, out var magazine) &&
+          textBoxName.Text != string.Empty &&
+          textBoxCaliber.Text != string.Empty)
+      { 
+        Weapon wp = new Weapon(textBoxName.Text, textBoxCaliber.Text, magazine, barrelLength); 
+        _weaponList.Add(wp); 
+        AddToDataGrid(wp);
+      }
+      else
+      {
+        MessageBox.Show(@"Please enter correct parameters!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
       
+      foreach(var a in _textBoxes)
+        a.Text = string.Empty;
     }
     private void saveFileButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
       using (FileStream fs = new FileStream("data.dat", FileMode.Create))
       using (BinaryWriter writer = new BinaryWriter(fs))
       {
-        foreach (var w in WeaponList)
+        foreach (var w in _weaponList)
         {
           writer.Write(w.Name);
           writer.Write(w.Caliber);
@@ -81,7 +96,7 @@ namespace WinFormsApp
     
     private void loadFileButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      WeaponList.Clear();
+      _weaponList.Clear();
       dataGridView1.Rows.Clear();
 
       if (File.Exists(@"data.dat"))
@@ -92,37 +107,38 @@ namespace WinFormsApp
           while (reader.BaseStream.Position != reader.BaseStream.Length)
           {
             Weapon weapon = new Weapon(reader.ReadString(), reader.ReadString(), reader.ReadInt32(), reader.ReadSingle());
-            WeaponList.Add(weapon);
+            _weaponList.Add(weapon);
             AddToDataGrid(weapon);
           }
         }
-
+        
       }
     }
     
     private void removeWeaponToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      FormWeaponSearch formWeaponSearch = new FormWeaponSearch(this);
-      formWeaponSearch.ShowDialog();
+      var weaponToRemove = _weaponList.FirstOrDefault(wp => textBoxName.Text == wp.Name);
+      textBoxName.Text = string.Empty;
+
+      if (weaponToRemove != null)
+      {
+        int index = _weaponList.IndexOf(weaponToRemove);
+        if (index >= 0)
+        {
+          _weaponList.RemoveAt(index);
+          
+          dataGridView1.Rows.Clear();
+          if (index < dataGridView1.Rows.Count)
+          {
+            dataGridView1.Rows.RemoveAt(index);
+          }
+        }
+      }
     }
-    //endregion form
-    
-    //region logic
-    public void AddToDataGrid(Weapon w)
+
+    private void AddToDataGrid(Weapon w)
     {
       dataGridView1.Rows.Add(w.Name, w.Caliber, w.MagazineCapacity, w.BarrelLength);
     }
-
-    public void RemoveFromDataGrid(string name)
-    {
-      WeaponList.RemoveAll(p => p.Name == name);
-      dataGridView1.Rows.Clear();
-      foreach (var wp in WeaponList)
-      {
-        AddToDataGrid(wp);
-      }
-    }
-    //endregion logic
-
   }
 }

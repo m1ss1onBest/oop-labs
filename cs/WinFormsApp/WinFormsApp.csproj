@@ -53,18 +53,6 @@
         <Compile Include="Form1.Designer.cs">
             <DependentUpon>Form1.cs</DependentUpon>
         </Compile>
-        <Compile Include="FormWeaponNew.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="FormWeaponNew.Designer.cs">
-          <DependentUpon>FormWeaponNew.cs</DependentUpon>
-        </Compile>
-        <Compile Include="FormWeaponSearch.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="FormWeaponSearch.Designer.cs">
-          <DependentUpon>FormWeaponSearch.cs</DependentUpon>
-        </Compile>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="types\BulletType.cs" />
@@ -73,12 +61,6 @@
         <Compile Include="types\WeaponType.cs" />
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="FormWeaponNew.resx">
-          <DependentUpon>FormWeaponNew.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="FormWeaponSearch.resx">
-          <DependentUpon>FormWeaponSearch.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

@@ -2,7 +2,7 @@
 {
     public class Weapon
     {
-        public string Name { set; get; }
+        public string Name { set; get; } = "no-name-specified";
         public string Caliber { set; get; } = "0x0mm";
         public int MagazineCapacity { set; get; } = 0;
         public float BarrelLength { set; get; } = 0;
