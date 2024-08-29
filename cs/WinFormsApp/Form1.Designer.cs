@@ -36,15 +36,15 @@
       this.loadFileButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.optionsButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.removeWeaponToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
       // menuStrip2
       // 
-      this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.actionsButtonToolStripMenuItem, this.optionsButtonToolStripMenuItem, this.aToolStripMenuItem });
+      this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.actionsButtonToolStripMenuItem, this.optionsButtonToolStripMenuItem });
       this.menuStrip2.Location = new System.Drawing.Point(0, 0);
       this.menuStrip2.Name = "menuStrip2";
       this.menuStrip2.Size = new System.Drawing.Size(904, 28);
@@ -53,7 +53,7 @@
       // 
       // actionsButtonToolStripMenuItem
       // 
-      this.actionsButtonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.newButtonToolStripMenuItem, this.newWithArgsButtonToolStripMenuItem, this.saveFileButtonToolStripMenuItem, this.loadFileButtonToolStripMenuItem });
+      this.actionsButtonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.newButtonToolStripMenuItem, this.newWithArgsButtonToolStripMenuItem, this.saveFileButtonToolStripMenuItem, this.loadFileButtonToolStripMenuItem, this.removeWeaponToolStripMenuItem });
       this.actionsButtonToolStripMenuItem.Name = "actionsButtonToolStripMenuItem";
       this.actionsButtonToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
       this.actionsButtonToolStripMenuItem.Text = "actionsButton";
@@ -100,12 +100,6 @@
       this.exitButtonToolStripMenuItem.Text = "exitButton";
       this.exitButtonToolStripMenuItem.Click += new System.EventHandler(this.exitButtonToolStripMenuItem_Click);
       // 
-      // aToolStripMenuItem
-      // 
-      this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-      this.aToolStripMenuItem.Size = new System.Drawing.Size(31, 24);
-      this.aToolStripMenuItem.Text = "A";
-      // 
       // dataGridView1
       // 
       this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -115,6 +109,13 @@
       this.dataGridView1.RowTemplate.Height = 24;
       this.dataGridView1.Size = new System.Drawing.Size(904, 455);
       this.dataGridView1.TabIndex = 2;
+      // 
+      // removeWeaponToolStripMenuItem
+      // 
+      this.removeWeaponToolStripMenuItem.Name = "removeWeaponToolStripMenuItem";
+      this.removeWeaponToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+      this.removeWeaponToolStripMenuItem.Text = "removeWeapon";
+      this.removeWeaponToolStripMenuItem.Click += new System.EventHandler(this.removeWeaponToolStripMenuItem_Click);
       // 
       // Form1
       // 
@@ -134,7 +135,7 @@
       this.PerformLayout();
     }
 
-    private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem removeWeaponToolStripMenuItem;
 
     private System.Windows.Forms.ToolStripMenuItem saveFileButtonToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem loadFileButtonToolStripMenuItem;

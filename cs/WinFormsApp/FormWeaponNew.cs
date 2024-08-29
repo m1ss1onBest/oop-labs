@@ -4,11 +4,11 @@ using WinFormsApp.crutch;
 
 namespace WinFormsApp
 {
-    public partial class InputWeaponForm : Form
+    public partial class FormWeaponNew : Form
     {
         private readonly Form1 _motherForm;
         
-        public InputWeaponForm(Form1 motherForm)
+        public FormWeaponNew(Form1 motherForm)
         {
             _motherForm = motherForm;
             InitializeComponent();
@@ -32,6 +32,7 @@ namespace WinFormsApp
             _motherForm.WeaponList.Add(wp);
             _motherForm.AddToDataGrid(wp);
             Close();
+            MessageBox.Show(@"New weapon successfully added", @"Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

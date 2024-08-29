@@ -2,7 +2,7 @@
 
 namespace WinFormsApp
 {
-    partial class InputWeaponForm
+    partial class FormWeaponNew
     {
         /// <summary>
         /// Required designer variable.
@@ -135,7 +135,7 @@ namespace WinFormsApp
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "InputWeaponForm";
+            this.Name = "FormWeaponNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InputWeaponForm";
             this.Load += new System.EventHandler(this.InputWeaponForm_Load);

@@ -60,8 +60,8 @@ namespace WinFormsApp
     }
     private void newWithArgsButtonToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      InputWeaponForm form = new InputWeaponForm(this);
-      form.ShowDialog();
+      FormWeaponNew @new = new FormWeaponNew(this);
+      @new.ShowDialog();
       
     }
     private void saveFileButtonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +99,12 @@ namespace WinFormsApp
 
       }
     }
+    
+    private void removeWeaponToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      FormWeaponSearch formWeaponSearch = new FormWeaponSearch(this);
+      formWeaponSearch.ShowDialog();
+    }
     //endregion form
     
     //region logic
@@ -106,6 +112,17 @@ namespace WinFormsApp
     {
       dataGridView1.Rows.Add(w.Name, w.Caliber, w.MagazineCapacity, w.BarrelLength);
     }
+
+    public void RemoveFromDataGrid(string name)
+    {
+      WeaponList.RemoveAll(p => p.Name == name);
+      dataGridView1.Rows.Clear();
+      foreach (var wp in WeaponList)
+      {
+        AddToDataGrid(wp);
+      }
+    }
     //endregion logic
+
   }
 }
