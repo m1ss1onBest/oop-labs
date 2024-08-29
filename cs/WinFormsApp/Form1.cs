@@ -25,6 +25,9 @@ namespace WinFormsApp
       actionsButtonToolStripMenuItem.Text = @"Actions";
       newButtonToolStripMenuItem.Text = @"New";
       newWithArgsButtonToolStripMenuItem.Text = @"New with args";
+      saveFileButtonToolStripMenuItem.Text = @"Save file";
+      loadFileButtonToolStripMenuItem.Text = @"Load file";
+      removeWeaponToolStripMenuItem.Text = @"Remove by name";
       
       // tool strip options
       optionsButtonToolStripMenuItem.Text = @"Options";
