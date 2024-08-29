@@ -24,15 +24,15 @@ public:
 
     void setX(const double x_) {x = x_;}
     void setY(const double y_) {y = y_;}
-    double getX() {return x;}
-    double getY() {return y;}
+    double getX() const {return x;}
+    double getY() const {return y;}
 
     void display() const {
         std::cout
         << '(' << x << ", " << y << ')' << std::endl;
     }
 
-    double getDistance() {
+    double getDistance() const {
         double xDiff = abs(x), yDiff = abs(y);
         return std::sqrt(xDiff*xDiff + yDiff*yDiff);
     }
@@ -42,11 +42,38 @@ public:
         y += y_;
     }
 
-    void multiply(const double m) {
-        x *= m;
-        y *= m;
+    Point operator++() const {
+        return Point(x+1, y+1);
+    }
+
+    bool operator==(Point& p) const {
+        return (x == p.x && y == p.y);
+    }
+
+    Point operator*(const double m) const {
+        return Point {x * m, y * m};
+    }
+
+    Point operator+(const double a) const {
+        return Point {x+a, y+a};
+    }
+
+    Point operator+(Point& p) const {
+        return Point {x + p.x, y + p.y};
     }
 };
+
+std::ostream& operator<<(std::ostream& os, const Point& point) {
+    os << "(" <<  point.getX() << ", " << point.getY() << ")";
+    return os;
+}
+
+void operator>>(std::istream& is, Point& point) {
+    double x, y;
+    is >> x >> y;
+    point.setX(x);
+    point.setY(y);
+}
 
 int main() {
     double x, y;
@@ -85,13 +112,51 @@ int main() {
     std::cin >> y;
     p2.setY(y);
     std::cout << "The new Y of point is: " << p2.getY() << '\n';
+    p2.display();
 
     std::cout << "-------------------------" << '\n';
     std::cout << "# Multiplying point by M:" << '\n';
     std::cout << "Enter the multyplier" << '\n';
     std::cin >> x;
-    p2.multiply(x);
+    p2 = p2 * x;
     p2.display();
+
+    std::cout << "-------------------------" << '\n';
+    std::cout << "# Overloading operators:" << '\n';
+    Point a(1, 4), b(5, -7);
+    a.display();
+    b.display();
+    Point c = a + b;
+    std::cout << "a + b equals " << '\n';
+    c.display();
+
+    std::cout << "point++" << '\n';
+    c = ++c;
+    c.display();
+
+    std::cout << "point + number" << '\n';
+    std::cout << "Enter number" << '\n';
+    std::cin >> x;
+    std::cout << "Point(" << c.getX() << ", " << c.getY() << ") + " << x << " equals" << '\n';
+    c = c + x;
+    c.display();
+
+    a = Point(1, 3);
+    b = Point(1, 3);
+    std::cout << "if (1, 3) equals (1, 3)" << '\n';
+    bool result = a == b;
+    std::cout << result << '\n';
+    std::cout << "if (1, 3) equals (1, 5)" << '\n';
+    b.setY(5);
+    result = a == b;
+    std::cout << result << '\n';
+
+    std::cout << "-------------------------" << '\n';
+    std::cout << "# To string display" << '\n';
+    Point newPoint;
+    std::cout << "Enter point (x, y)" << '\n';
+    std::cin >> newPoint;
+    std::cout << "The new point is: " << newPoint << std::endl;
 
     std::cout << "-------------------------" << '\n';
     std::cout << "# Calling destructors" << '\n';
