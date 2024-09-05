@@ -105,6 +105,15 @@ namespace WinFormsApp.Tests
             Print(a);
             
         }
-        
+
+        [Fact]
+        private void IsGreater()
+        {
+            var greater = new UInt256("0000000000000000000000000000000000000000000000000000000100000000");
+            var notGreater = new UInt256("00000000000000000000000000000000000000000000000000000000ffffffff");
+            
+            Assert.True(greater.IsGreater(notGreater));
+            
+        }
     }
 }

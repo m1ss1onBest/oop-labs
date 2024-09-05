@@ -1,4 +1,5 @@
 ﻿using System;
+using Xunit.Sdk;
 
 namespace WinFormsApp.Data
 {
@@ -35,16 +36,20 @@ namespace WinFormsApp.Data
                     hex.Substring(i * 8, 8),
                     System.Globalization.NumberStyles.HexNumber);
             }
-
             return data;
         }
         
         public static UInt256 operator +(UInt256 a, UInt256 b) => a.Add(b);
+        public static UInt256 operator +(UInt256 a, uint b) => a.Add(new UInt256(new uint[] { b, 0, 0, 0, 0, 0, 0}));
         public static UInt256 operator -(UInt256 a, UInt256 b) => a.Subtract(b);
         public static bool operator ==(UInt256 a, UInt256 b) => Equals(a, b);
         public static bool operator !=(UInt256 a, UInt256 b) => !Equals(a, b);
         public static UInt256 operator ++(UInt256 value) => value.Add(new UInt256(new uint[] { 1, 0, 0, 0, 0, 0, 0, 0}));
         public static UInt256 operator --(UInt256 value) => value.Subtract(new UInt256(new uint[] {1, 0, 0, 0, 0, 0, 0, 0}));
+        public static bool operator >(UInt256 a, UInt256 b) => a.IsGreater(b);
+        public static bool operator <(UInt256 a, UInt256 b) => b.IsGreater(a);
+        public static bool operator >=(UInt256 a, UInt256 b) => (--a).IsGreater(b);
+        public static bool operator <=(UInt256 a, UInt256 b) => (--b).IsGreater(a);
 
         public override bool Equals(object obj)
         {
@@ -96,6 +101,16 @@ namespace WinFormsApp.Data
             return new UInt256(result);
         }
 
+        public bool IsGreater(UInt256 value)
+        {
+            for (int rev = 7; rev >= 0; rev--)
+            {
+                if (_data[rev] > value._data[rev]) return true;
+                if (_data[rev] < value._data[rev]) return false;
+            }
+            return false;
+        }
+
         
         public override string ToString()
         {
@@ -104,10 +119,6 @@ namespace WinFormsApp.Data
             return string.Concat(hexParts);
         }
 
-        public override int GetHashCode()
-        {
-            throw new NotImplementedException("TODO!");
-            // return (_data != null ? _data.GetHashCode() : 0);
-        }
+        public override int GetHashCode() => throw new NotImplementedException("TODO!");
     }
 }
