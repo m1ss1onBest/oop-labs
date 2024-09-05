@@ -48,8 +48,8 @@ namespace WinFormsApp.Data
         public static UInt256 operator --(UInt256 value) => value.Subtract(new UInt256(new uint[] {1, 0, 0, 0, 0, 0, 0, 0}));
         public static bool operator >(UInt256 a, UInt256 b) => a.IsGreater(b);
         public static bool operator <(UInt256 a, UInt256 b) => b.IsGreater(a);
-        public static bool operator >=(UInt256 a, UInt256 b) => (--a).IsGreater(b);
-        public static bool operator <=(UInt256 a, UInt256 b) => (--b).IsGreater(a);
+        public static bool operator >=(UInt256 a, UInt256 b) => (++a).IsGreater(b);
+        public static bool operator <=(UInt256 a, UInt256 b) => (++b).IsGreater(a);
 
         public override bool Equals(object obj)
         {

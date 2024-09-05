@@ -103,7 +103,6 @@ namespace WinFormsApp.Tests
             _testOutputHelper.WriteLine(@"Now another ops");
             Print(a--);
             Print(a);
-            
         }
 
         [Fact]
@@ -113,7 +112,10 @@ namespace WinFormsApp.Tests
             var notGreater = new UInt256("00000000000000000000000000000000000000000000000000000000ffffffff");
             
             Assert.True(greater.IsGreater(notGreater));
-            
+            Assert.True(greater > notGreater);
+            Assert.True(notGreater < greater);
+            Assert.True(++notGreater >= greater);
+            Assert.True(--greater <= notGreater);
         }
     }
 }
