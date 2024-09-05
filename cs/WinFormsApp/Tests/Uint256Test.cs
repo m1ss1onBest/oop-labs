@@ -5,11 +5,11 @@ using Xunit.Abstractions;
 
 namespace WinFormsApp.Tests
 {
-    public class Test
+    public abstract class Uint256Test
     {
         private readonly ITestOutputHelper _testOutputHelper;
 
-        public Test(ITestOutputHelper testOutputHelper)
+        protected Uint256Test(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;
         }

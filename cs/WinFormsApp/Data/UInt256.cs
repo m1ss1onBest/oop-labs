@@ -5,7 +5,7 @@ namespace WinFormsApp.Data
 {
     public class UInt256
     {
-        private uint[] _data;
+        protected uint[] _data;
 
         public uint[] Data
         {
@@ -110,7 +110,6 @@ namespace WinFormsApp.Data
             }
             return false;
         }
-
         
         public override string ToString()
         {
