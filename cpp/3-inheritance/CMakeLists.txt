@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.29)
-project(3_inheritance)
+project(lab2_point)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(3_inheritance main.cpp)
+add_executable(lab2_point main.cpp)

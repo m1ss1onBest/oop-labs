@@ -1,3 +1,2 @@
-C:/Users/m1ss1on/Projects/oop-labs/cpp/3-inheritance/cmake-build-debug/CMakeFiles/3_inheritance.dir
 C:/Users/m1ss1on/Projects/oop-labs/cpp/3-inheritance/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/m1ss1on/Projects/oop-labs/cpp/3-inheritance/cmake-build-debug/CMakeFiles/rebuild_cache.dir
