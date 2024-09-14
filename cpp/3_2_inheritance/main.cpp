@@ -8,8 +8,9 @@ protected:
     int year;
 
 public:
-    PrintPublication(const std::string& title, int year)
-        : title(title), year(year) {
+    PrintPublication(const std::string& title, int year):
+    title(title),
+    year(year) {
 
     }
 
@@ -21,9 +22,12 @@ public:
 };
 
 class Book : public PrintPublication {
+    std::string author;
 public:
-    Book(const std::string& title, int year, const std::string& author)
-        : PrintPublication(title, year), author(author) {
+
+    Book(const std::string& title, int year, const std::string& author) :
+    PrintPublication(title, year),
+    author(author) {
 
     }
 
@@ -31,9 +35,22 @@ public:
         PrintPublication::printDetails();
         std::cout << "Author: " << author << std::endl;
     }
-private:
-    std::string author;
+};
 
+class Textbook : public Book {
+    std::string subject;
+
+public:
+    Textbook(const std::string& title, int year, std::string& author, const std::string& subject) :
+    Book(title, year, author),
+    subject(subject) {
+
+    }
+
+    void printDetails() const override {
+        Book::printDetails();
+        std::cout << "Subject: " << subject << std::endl;
+    }
 };
 
 int main() {
