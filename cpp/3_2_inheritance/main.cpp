@@ -20,5 +20,21 @@ public:
 
 };
 
+class Book : public PrintPublication {
+public:
+    Book(const std::string& title, int year, const std::string& author)
+        : PrintPublication(title, year), author(author) {
+
+    }
+
+    void printDetails() const override {
+        PrintPublication::printDetails();
+        std::cout << "Author: " << author << std::endl;
+    }
+private:
+    std::string author;
+
+};
+
 int main() {
 }
