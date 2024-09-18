@@ -33,6 +33,7 @@
 
 # Other
 .idea
+*.idea*
 
 # Build results
 [Dd]ebug/
