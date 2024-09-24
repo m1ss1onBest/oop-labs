@@ -7,7 +7,10 @@ class Shape {
 public:
     virtual ~Shape() = default;
 
-    virtual void display() = 0;
+    virtual void display() {
+        std::cout << std::format("Perimeter({})", perimeter()) << '\n';
+        std::cout << std::format("Area({})", area()) << std::endl;
+    }
     virtual float perimeter() = 0;
     virtual float area() = 0;
 };
@@ -22,8 +25,7 @@ public:
 
     void display() override {
         std::cout << std::format("Rectangle({}, {})", x, y) << '\n';
-        std::cout << std::format("Perimeter({})", perimeter()) << '\n';
-        std::cout << std::format("Area({})", area()) << std::endl;
+        Shape::display();
     }
 
     float perimeter() override {
@@ -44,8 +46,7 @@ public:
 
     void display() override {
         std::cout << std::format("Circle({})", radius) << '\n';
-        std::cout << std::format("Perimeter({})", perimeter()) << '\n';
-        std::cout << std::format("Area({})", area()) << std::endl;
+        Shape::display();
     }
 
     float perimeter() override {
@@ -66,8 +67,7 @@ public:
 
     void display() override {
         std::cout << std::format("Triangle({}, {}, {})", a, b, c) << '\n';
-        std::cout << std::format("Perimeter({})", perimeter()) << '\n';
-        std::cout << std::format("Area({})", area()) << std::endl;
+        Shape::display();
     }
 
     float perimeter() override {
@@ -85,7 +85,7 @@ void printMenu();
 int main() {
     std::vector<Shape*> shapes;
     int command { 1 };
-    float a, b, c;
+    float m, n, u;
 
     while (true) {
         printMenu();
@@ -93,20 +93,30 @@ int main() {
         switch (command) {
             case 1:
                 std::cout << "enter (x, y): ";
-                std::cin >> a >> b;
-                shapes.push_back(new Rectangle(a, b));
+                std::cin >> m >> n;
+                shapes.push_back(new Rectangle(m, n));
             break;
 
             case 2:
                 std::cout << "enter (radius): ";
-                std::cin >> a;
-                shapes.push_back(new Circle(a));
+                std::cin >> m;
+                shapes.push_back(new Circle(m));
             break;
 
             case 3:
                 std::cout << "enter (a, b, c): ";
-            std::cin >> a >> b >> c;
-            shapes.push_back(new Triangle(a, b, c));
+            std::cin >> m >> n >> u;
+            if (m + n >= u) {
+                if (n + u >= m) {
+                    if (m + u >= n) {
+                        shapes.push_back(new Triangle(m, n, u));
+                    }
+                    else {
+                        std::cout << "Cannot add triangle with wrong sides" << std::endl;
+                    }
+                }
+            }
+
             break;
 
             case 4:

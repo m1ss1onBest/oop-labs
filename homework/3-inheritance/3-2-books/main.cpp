@@ -1,5 +1,7 @@
+#include <chrono>
 #include <format>
 #include <iostream>
+#include <string.h>
 #include <vector>
 
 using std::string;
@@ -18,6 +20,10 @@ public:
         << std::format("Author: {}", authors) << '\n'
         << std::format("Year: {}", year) << std::endl;
     }
+
+    string getName() {
+        return title;
+    };
 };
 
 class Book : public PrintedEdition {
@@ -105,6 +111,17 @@ int main() {
                 }
                 break;
 
+            case 6:
+                std::cout << "enter name" << '\n';
+            std::cin >> a;
+            for (auto& amogus : editions) {
+                if (strcmp(a.c_str(), amogus->getName().c_str()) == 0) {
+                    amogus->display();
+                    std::cout << std::endl;
+                }
+            }
+            break;
+
             case 0:
                 return 0;
             default:
@@ -122,5 +139,6 @@ void printMenu() {
     << "3. Add new TextBook\n"
     << "4. Add new Magazine\n"
     << "5. Display all data\n"
+    << "6. Searching by name\n"
     << "0. Exit" << std::endl;
 }
