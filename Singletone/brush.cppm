@@ -1,10 +1,8 @@
 ﻿export module brush;
 
-#include <utility>
-
 #include "string"
 #include "format"
-#include "iostream"
+#include <iostream>
 
 export class brush
 {
@@ -57,4 +55,18 @@ public:
         delete self;
         self = nullptr;
     }
+
+    static void display()
+    {
+        if (self == nullptr)
+        {
+            std::cout << "nullptr\n";
+        }
+        else
+        {
+            std::cout << std::format("Brush({}, {}px)\n", self->color, self->radius);
+        }
+    }
 };
+
+brush* brush::self = nullptr;
