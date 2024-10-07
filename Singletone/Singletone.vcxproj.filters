@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="_4_classes.cpp">
+    <ClCompile Include="Singletone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
