@@ -1,5 +1,7 @@
 ﻿export module brush;
 
+#include <utility>
+
 #include "string"
 #include "format"
 #include "iostream"
@@ -14,7 +16,7 @@ export class brush
     brush() = default;
     brush(std::string color, uint8_t radius) : color(std::move(color)), radius(radius)
     {
-        std::cout << std::format("new brush created at: {}\n", this);
+        
     }
 
     static void check_or_init()
@@ -42,6 +44,12 @@ public:
     {
         check_or_init();
         self->radius = radius;
+    }
+
+    static void create_new(std::string color, uint8_t radius)
+    {
+        delete self;
+        self = new brush(std::move(color), radius);
     }
 
     static void destroy_instance()
