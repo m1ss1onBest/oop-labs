@@ -17,7 +17,7 @@ class nft : public contract {
 
 public:
     nft(const std::string& name, const std::string& symbol, unsigned long token_id)
-        : name(name), symbol(symbol), id(token_id) {}
+        : symbol(symbol), name(name), id(token_id) {}
 
     void transfer(const std::string& to, unsigned long token_id) override {
         std::cout << std::format("NFT with id {} transferred to {}\n", token_id, to);
@@ -40,7 +40,7 @@ class fungible_token : public contract {
 
 public:
     fungible_token(const std::string& name, const std::string& symbol, unsigned long initial_supply)
-        : name(name), symbol(symbol), supply(initial_supply) {}
+        : symbol(symbol), name(name), supply(initial_supply) {}
 
     void transfer(const std::string& address, unsigned long amount) override {
         std::cout << std::format("Transferred {} tokens to {}\n", amount, address);
