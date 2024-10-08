@@ -4,18 +4,18 @@ public abstract class Program
 {
     public static void Main()
     {
-        GuiLib.IGuiFactory windowsFactory = new GuiLib.WindowsGuiFactory();
-        GuiLib.IGuiFactory xorgFactory = new GuiLib.XorgGuiFactory();
-        GuiLib.IGuiFactory macFactory = new GuiLib.MacGuiFactory();
+        IGuiFactory windowsFactory = new WindowsGuiFactory();
+        IGuiFactory xorgFactory = new XorgGuiFactory();
+        IGuiFactory macFactory = new MacGuiFactory();
 
-        GuiLib.IButton windowsButton = windowsFactory.CreateButton();
-        GuiLib.ILabel windowsLabel = windowsFactory.CreateLabel();
+        IButton windowsButton = windowsFactory.CreateButton();
+        ILabel windowsLabel = windowsFactory.CreateLabel();
 
-        GuiLib.IButton xorgButton = xorgFactory.CreateButton();
-        GuiLib.ILabel xorgLabel = xorgFactory.CreateLabel();
+        IButton xorgButton = xorgFactory.CreateButton();
+        ILabel xorgLabel = xorgFactory.CreateLabel();
 
-        GuiLib.IButton macButton = macFactory.CreateButton();
-        GuiLib.ILabel macLabel = macFactory.CreateLabel();
+        IButton macButton = macFactory.CreateButton();
+        ILabel macLabel = macFactory.CreateLabel();
     }
 }
 

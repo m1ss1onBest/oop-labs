@@ -6,7 +6,7 @@ public class Car
      public int Year { get; private set; } = 1978;
      public string Color { get; private set; } = "Dirty White";
      public string Engine { get; private set; } = "At least has";
-     public int HorsePowers { get; private set; } = 11;
+     public int HorsePowers { get; private set; } = 12;
      public string FuelType { get; private set; } = "Wood / Coal";
      public bool HasMassageSeats { get; private set; } = true;
 
