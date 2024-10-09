@@ -1,26 +1,18 @@
-﻿// ReSharper disable CppClangTidyCppcoreguidelinesSpecialMemberFunctions
-module;
-#include "iostream"
-#include "format"
-#include "vector"
-#include "string"
-
-class subject;
+﻿module;
+#include <iostream>
+#include <format>
+#include <string>
 
 export module student;
-
-export class student
+export class student  // NOLINT(cppcoreguidelines-special-member-functions)
 {
     std::string first_name;
     std::string last_name;
     std::string email;
 
-    std::vector<subject*>* subjects;
-
 public:
     student()
     {
-        subjects = nullptr;
         first_name = last_name = email = "";
         std::cout << "created empty student at: " << this << '\n';
     }
@@ -56,11 +48,6 @@ public:
         return email;
     }
 
-    std::vector<subject*>* get_subjects()
-    {
-        return subjects;
-    }
-
     std::string format()
     {
         return std::format("Student({}, {}, {})\n", first_name, last_name, email);
@@ -70,53 +57,4 @@ public:
     {
         std::cout << format();
     }
-
-    void add_subject(subject* subj)
-    {
-        subjects->push_back(subj);
-    }
 };    
-
-class subject
-{
-    std::string name;
-    std::vector<student*>* students;
-
-public:
-    subject()
-    {
-        name = "";
-        students = nullptr;
-    }
-    explicit subject(std::string name) : name(std::move(name))
-    {
-        std::cout << std::format("new subject: {}\n", name);
-    }
-
-    subject(std::string name, const subject& original) :
-    name(std::move(name))
-    {
-        std::cout << "Copied students from " << original.name << " to " << this->name << '\n';
-        students = original.students;
-    }
-
-    std::string& get_name()
-    {
-        return name;
-    }
-    
-    std::vector<student*>* get_students()
-    {
-        return students;
-    }
-
-    std::string format()
-    {
-        return std::format("Subject({}, {} students)\n", name, students->size());
-    }
-
-    void display()
-    {
-        std::cout << format();
-    }
-};
