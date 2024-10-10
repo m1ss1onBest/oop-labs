@@ -155,7 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Aggregation.cpp" />
+    <ClCompile Include="Composition.cpp" />
     <ClCompile Include="engine.cppm" />
     <ClCompile Include="plane.cppm" />
   </ItemGroup>

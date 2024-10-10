@@ -155,8 +155,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Composition.cpp" />
-    <ClCompile Include="human.cppm" />
+    <ClCompile Include="Agregation.cpp" />
+    <ClCompile Include="battery.cppm" />
+    <ClCompile Include="processor.cppm" />
+    <ClCompile Include="ram.cppm" />
+    <ClCompile Include="screen.cppm" />
+    <ClCompile Include="laptop.cppm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
