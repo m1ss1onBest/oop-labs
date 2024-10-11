@@ -26,6 +26,11 @@ public class Proxy
             realblockChain = new RealBlockchain();
         }
 
+        void ChangeNetwork(RealBlockchain newNetwork)
+        {
+            //bad example but ok let it be
+            realblockChain = newNetwork;
+        }
         public void AddBlock(string data)
         {
             if (hasAccess)
