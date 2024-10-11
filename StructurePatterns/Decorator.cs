@@ -25,7 +25,8 @@ public class Decorator
         {
             this.block = block;
         }
-
+        
+        //in this case the decorator will encrypt block's data
         public string GetData()
         {
             return Encrypt(block.GetData());
