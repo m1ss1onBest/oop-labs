@@ -44,7 +44,7 @@ public:
             return *this;
         }
 
-        builder set_fuel_tank_capacity(uint32_t capacity)
+        builder& set_fuel_tank_capacity(uint32_t capacity)
         {
             fuel_tank = capacity;
             return *this;
