@@ -155,7 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CollectionsHomework.cpp" />
+    <ClCompile Include="MyVector.cpp" />
     <ClCompile Include="Vec.cppm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
