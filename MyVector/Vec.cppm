@@ -49,7 +49,7 @@ class vec
         }
     }
 
-    void concat(T* another)
+    void concat(T* another) //not implemented
     {
         throw std::exception("not implemented");
     }

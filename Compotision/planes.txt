@@ -1,0 +1,3 @@
+Plane(name: A-10, max_h: 6319, fuel_cap: 123452, Engine(fuel-type: democracy, horse-powers: 900, cylinders: 21))
+Plane(name: Boeing 3310, max_h: 9000, fuel_cap: 150000, Engine(fuel-type: Coal, horse-powers: 1500, cylinders: 18))
+Plane(name: F-16, max_h: 12000, fuel_cap: 45000, Engine(fuel-type: rocket fuel, horse-powers: 6565, cylinders: 45))

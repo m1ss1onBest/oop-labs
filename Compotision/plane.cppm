@@ -14,6 +14,26 @@ export class plane
     engine plane_engine;
 
 public:
+    [[nodiscard]] std::string get_name() const
+    {
+        return name;
+    }
+
+    [[nodiscard]] uint16_t get_max_height() const
+    {
+        return max_height;
+    }
+
+    [[nodiscard]] uint32_t get_fuel_capacity() const
+    {
+        return fuel_tank_capacity;
+    }
+
+    [[nodiscard]] engine get_engine() const
+    {
+        return plane_engine;
+    }
+
     std::string format()
     {
         return std::format("Plane(name: {}, max_h: {}, fuel_cap: {}, {})", name, max_height, fuel_tank_capacity, plane_engine.format());
